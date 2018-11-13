@@ -271,7 +271,6 @@ var saving_id = function(){
     if(data_stream) {
       client.recordEvent('stream_browser_info', {
         session_id: jspsych_id,
-        taskOrder: TaskOrder,
         experimental_condition: vaast_condition_approach_1,
         "user_agent": "${keen.user_agent}",
         res_height: window.screen.availHeight,
@@ -291,7 +290,6 @@ var saving_vaast_trial = function(){
     if(data_stream) {
       client.recordEvent('stream_vaast_trial', {
         session_id: jspsych_id,
-        taskOrder: TaskOrder,
         experimental_condition: vaast_condition_approach_1,
         vaast_trial_data: jsPsych.data.get().last(3).json()
       });
@@ -309,7 +307,6 @@ var saving_demographics = function(){
     if(data_stream) {
       client.recordEvent('stream_demographics', {
         session_id: jspsych_id,
-        taskOrder: TaskOrder,
         experimental_condition: vaast_condition_approach_1,
         demographics_data: jsPsych.data.get().last(5).json()
       });
@@ -327,7 +324,6 @@ var saving_iat_trial = function(){
     if(data_stream) {
       client.recordEvent('stream_iat', {
         session_id: jspsych_id,
-        taskOrder: TaskOrder,
         experimental_condition: vaast_condition_approach_1,
         iat_good_side: iat_good,
         iat_black_1_side: iat_black_1,
@@ -347,7 +343,6 @@ var saving_browser_events = function(completion) {
       if(data_stream) {
         client.recordEvent('stream_browser_event', {
           session_id: jspsych_id,
-          taskOrder: TaskOrder,
           event_data: jsPsych.data.getInteractionData().json(),
           completion: completion
         });
