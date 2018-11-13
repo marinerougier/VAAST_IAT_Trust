@@ -372,7 +372,7 @@ var save_demographics = {
 
 // iat sampling function ----------------------------------------------------------------
 var sample_n_iat = function(list, n) {
-  list = jsPsych.randomization.sampleWithReplacement(list, n);
+  list = jsPsych.randomization.sampleWithoutReplacement(list, n);
   list = jsPsych.randomization.shuffleNoRepeats(list);
 
   return(list);
